@@ -1,4 +1,4 @@
 angular-prismic-playground
 ==========================
 
-AnularJS &amp; prismic.io playground project
+AngularJS &amp; prismic.io playground project
