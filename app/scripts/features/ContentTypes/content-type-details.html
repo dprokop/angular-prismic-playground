@@ -1,0 +1,50 @@
+<div ng-controller="ContentTypesCtrl">
+    <div class="jumbotron">
+        <h2>{{ selectedType.name }} <sup>{{ selectedType.size }}</sup></h2>
+
+    </div>
+        <div ng-if="selectedType.size">
+
+            <div class="panel panel-info" ng-controller="ContentTypeCtrl" ng-repeat="item in selectedType.docs">
+
+                <div class="panel-heading">
+                    {{item.id}}
+
+                    <div class="btn-group pull-right">
+                      <button type="button" class="btn btn-primary btn-sm">View as</button>
+                      <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="" ng-click="toggleJson()">JSON</a></li>
+                        <li><a href="" ng-click="toggleHtml()">HTML</a></li>
+                      </ul>
+                    </div>
+
+                </div>
+
+                <div class="panel-body">
+                    <div class="bs-callout bs-callout-warning bs-meta">
+                        <h6><strong>id:</strong> {{item.id}}</h6>
+                        <h6><strong>slugs:</strong> {{item.slugs}}</h6>
+                        <h6><strong>tags:</strong> {{item.tags}}</h6>
+                        <h6><strong>type:</strong> {{item.type}}</h6>
+                        <h6><strong>href:</strong> {{item.href}}</h6>
+                    </div>
+                    <pre json="item.fragments" pretty-json ng-show="jsonVisible"></pre>
+                    <h1 ng-show="htmlVisible">HTML visible</h1>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div ng-if="selectedType.size==0">No results</div>
+        <div ng-if="!selectedType.size && selectedType.size!=0">Loading ...</div>
+
+
+
+
+
+</div>

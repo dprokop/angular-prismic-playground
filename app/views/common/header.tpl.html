@@ -1,0 +1,7 @@
+<div class="header" ng-controller="HeaderCtrl">
+    <select class="pull-right" name="" id=""
+        ng-change="changeType()"
+        ng-model="selectedType"
+        ng-options="type_id as type for (type_id, type) in types"></select>
+    <h3 class="text-muted">prismic content browser</h3>
+</div>
